@@ -1,0 +1,29 @@
+    <audio id="audio" src="ambient.mp3" muted></audio>
+    <button id="mute-button">Unmute</button>
+    <script>
+      // Select the audio and button elements
+      const audioElement = document.querySelector("#audio");
+      const muteButton = document.querySelector("#mute-button");
+
+      // Add a click event listener to the button
+      muteButton.addEventListener("click", () => {
+        // Toggle the muted attribute of the audio element
+        audioElement.muted = !audioElement.muted;
+
+        // Play the audio if it is not muted, pause it if it is muted
+        if (audioElement.muted) {
+          audioElement.pause();
+        } else {
+          audioElement.play();
+        }
+
+        // Update the text of the button
+        if (audioElement.muted) {
+          muteButton.textContent = "Unmute";
+        } else {
+          muteButton.textContent = "Mute";
+        }
+      });
+    </script>
+  </body>
+</html>
